@@ -106,3 +106,25 @@ $(document).ready(function() {
     $window.on('scroll resize', checkIfInView);
     $window.trigger('scroll');
 });
+
+$(document).ready(function() {   
+    $("#rsvp-form").on("submit", function(e) {
+        var postData = $(this).serializeArray();
+        var formURL = $(this).attr("action");
+        var answer = $();
+        $.ajax({
+            url: formURL,
+            type: "POST",
+            data: postData,
+            success: function(data, textStatus, jqXHR) {
+
+                document.cookie = "rsvp=yes";
+                window.location.reload();
+            },
+            error: function(jqXHR, status, error) {
+                console.log(status + ": " + error);
+            }
+        });
+        e.preventDefault();
+    });
+})

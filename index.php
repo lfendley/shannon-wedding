@@ -353,32 +353,36 @@
                   </div>
                 </div>
                 <div class="form-row">
-                  <!-- <div class="form-group col-sm-6">
+                  <div class="form-group col-sm-6">
                     <select
+                    id="number"
+                    name="number"
                       class="form-control bg-secondary border-0"
                       style="height: 52px"
                     >
                       <option>Number of Guest</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
                     </select>
-                  </div> -->
-                  <div class="form-group col-sm-12">
+                  </div>
+                  <div class="form-group col-sm-6">
                     <select
-                      id="attending"
-                      name="attending"
+                        id="attending"
+                        name="attending"
                       class="form-control bg-secondary border-0"
                       style="height: 52px"
                     >
-                      <option>I'm Attending</option>
-                      <option>I'm Not Attending</option>
+                      <option value="attending">I'm Attending</option>
+                      <option value="not attending">I'm Not Attending</option>
                     </select>
                   </div>
                 </div>
                 <div class="form-group">
                   <textarea
+                  id="message"
+                  name="message"
                     class="form-control bg-secondary border-0 py-2 px-3"
                     rows="5"
                     placeholder="Please state your parties meal choice of meat or vegetarian"
