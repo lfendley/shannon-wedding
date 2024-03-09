@@ -192,6 +192,9 @@
   .timeline .row {
     border: 1px solid var(--sage);
   }
+  .timeline .row:nth-of-type(even) {
+    flex-direction: column-reverse;
+}
 }
 
 #venue .row h5 {
