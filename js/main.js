@@ -35,20 +35,6 @@
             $('.scroll-to-bottom').fadeIn('slow');
         }
     });
-
-
-    // Portfolio isotope and filter
-    var portfolioIsotope = $('.portfolio-container').isotope({
-        itemSelector: '.portfolio-item',
-        layoutMode: 'fitRows'
-    });
-    $('#portfolio-flters li').on('click', function () {
-        $("#portfolio-flters li").removeClass('active');
-        $(this).addClass('active');
-
-        portfolioIsotope.isotope({filter: $(this).data('filter')});
-    });
-    
     
     // Back to top button
     $(window).scroll(function () {
@@ -107,7 +93,77 @@ $(document).ready(function() {
     $window.trigger('scroll');
 });
 
-$(document).ready(function() {   
+// Form
+
+function rsvpCheck() {
+    document.getElementById("yes").checked ? ($("#ifYes").slideDown(), $("#ifNo").slideUp()) : ($("#ifYes").slideUp(), $("#ifNo").slideDown())
+}
+
+function checkFields() {
+    var e = document.getElementById("attending").value,
+        o = $("#one-food"),
+        i = $("#two"),
+        s = $("#two-food"),
+        n = $("#three"),
+        d = $("#three-food"),
+        l = $("#four"),
+        t = $("#four-food");
+    // $("#song");
+    switch (e) {
+        case "1":
+            o.slideDown(), i.slideUp(), s.slideUp(), n.slideUp(), d.slideUp(), l.slideUp(), t.slideUp();
+            break;
+        case "2":
+            i.slideDown(), s.slideDown(), n.slideUp(), d.slideUp(), l.slideUp(), t.slideUp();
+            break;
+        case "3":
+            i.slideDown(), s.slideDown(), n.slideDown(), d.slideDown(), l.slideUp(), t.slideUp();
+            break;
+        case "4":
+            i.slideDown(), s.slideDown(), n.slideDown(), d.slideDown(), l.slideDown(), t.slideDown()
+    }
+}
+
+$('#submit').click(function() {
+     $('#modalname').text($('#name').val());
+     $('#modalemail').text($('#email').val());
+
+     $('#modalparty').text($('#attending').val());
+     $('#modalguest1-food').text($('#guest1-food').val());
+     $('#modalguest2').text($('#other2').val());
+     $('#modalguest2meal').text($('#guest2-food').val());
+     $('#modalguest3').text($('#other3').val());
+     $('#modalguest3meal').text($('#guest3-food').val());
+     $('#modalguest4').text($('#other4').val());
+     $('#modalguest4meal').text($('#guest4-food').val());
+     
+    if ($('input[id="yes"]').is(':checked')) {
+        $('#modalattending').text($('#yes').val());
+        $('#answer').text("Yes");
+    } else if ($('input[id="no"]').is(':checked')) {
+        $('#modalattending').text($('#no').val());
+        $('#answer').text("No");
+    };
+});
+
+$('#modalsubmit').click(function(){
+    var answer = $("#modalattending").text();
+    
+    if (answer == 'Yes') {
+        localStorage.setItem('rsvp', 'Yes');
+    } else {
+        localStorage.setItem('rsvp', 'No');
+    }
+    $('#rsvp-form').submit();
+});
+
+$("#footer button").click(function() {
+    document.cookie = "rsvp=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    window.location.reload();
+});
+
+$(document).ready(function() {
+    
     $("#rsvp-form").on("submit", function(e) {
         var postData = $(this).serializeArray();
         var formURL = $(this).attr("action");
@@ -117,9 +173,10 @@ $(document).ready(function() {
             type: "POST",
             data: postData,
             success: function(data, textStatus, jqXHR) {
-
+                $("#modalsubmit").remove();
+                // $("#rsvp-form").remove();
                 document.cookie = "rsvp=yes";
-                window.location.reload();
+                // window.location.reload();
             },
             error: function(jqXHR, status, error) {
                 console.log(status + ": " + error);
@@ -127,4 +184,11 @@ $(document).ready(function() {
         });
         e.preventDefault();
     });
-})
+    var cookies = document.cookie.split(';');
+    var cookiesName = []; 
+    
+    for(var i=0; i<cookies.length; i++) {
+        cookiesName[i] = cookies[i].split('=')[0].trim();
+    }
+}), 
+$(".toggle-radio").on("click", rsvpCheck);
