@@ -281,7 +281,7 @@
       <div class="row justify-content-center">
         <div class="col-lg-12">
           <div class="text-center">
-            <form id="rsvp-form" class="form" action="data.php" method="post">
+            <form id="rsvp-form" class="form" action="/data.php" method="post">
               <div class="form-row">
                 <div class="form-group col-sm-6">
                   <input name="name" type="text" class="form-control bg-secondary border-0 py-4 px-3" id="name" required placeholder="Your Name">
