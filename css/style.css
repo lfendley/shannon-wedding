@@ -11207,9 +11207,6 @@ span.marg-left-5{
   margin-left:5px
 }
 @media screen and (max-width: 640px){
-  p{
-      font-size:1.4rem
-  }
   #countdown .countdown{
       font-size:2.5em
   }
