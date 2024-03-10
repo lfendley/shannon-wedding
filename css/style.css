@@ -10284,10 +10284,6 @@ a.text-dark:focus {
   font-weight:600;
   color:indianred
 }
-a,body,ol,p,span,ul{
-  font-size:16px;
-  color:#848484
-}
 #header,body{
   position:relative
 }
