@@ -177,7 +177,7 @@
                 class="text-uppercase text-primary mb-3"
                 style="letter-spacing: 3px"
             >
-            Accomodation
+            Accommodation
             </h6>
             <h1 class="font-secondary display-4">Inmood San Roque Hotel</h1>
             <i class="far fa-heart text-dark"></i>
