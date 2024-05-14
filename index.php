@@ -46,7 +46,7 @@
         </h1>
       </a>
       <div class="navbar-nav mr-auto py-0">
-        <a href="#accomodation" class="nav-item nav-link">Accomodation</a>
+        <a href="#accommodation" class="nav-item nav-link">Accommodation</a>
         <a href="#timeline" class="nav-item nav-link">Timeline</a>
         <a href="#rsvp" class="nav-item nav-link">RSVP</a>
       </div>
@@ -170,7 +170,7 @@
   <!-- Venue End -->
 
   <!-- Accomodation Start -->
-  <div class="container-fluid py-5" id="accomodation">
+  <div class="container-fluid py-5" id="accommodation">
         <div class="container py-5 text-white">
             <div class="section-title position-relative text-center">
             <h6
