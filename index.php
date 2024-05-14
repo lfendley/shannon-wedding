@@ -170,7 +170,7 @@
   <!-- Venue End -->
 
   <!-- Accomodation Start -->
-  <!-- <div class="container-fluid py-5" id="accomodation">
+  <div class="container-fluid py-5" id="accomodation">
         <div class="container py-5 text-white">
             <div class="white section-title position-relative text-center">
             <h6
@@ -194,7 +194,7 @@
             </div>
             </div>
         </div>
-        </div> -->
+        </div>
   <!-- Accomodation End -->
 
   <!-- Event timeline Start -->
