@@ -11540,28 +11540,26 @@ label[for="no"] {
   padding: 5px;
 }
 
-.hotel-mason {
-  display: grid;
-  grid-gap: 5px;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  grid-auto-rows: 375px;
-  grid-auto-flow: dense;
+.accommodation-banner {
+  width: 100%;
+  height: 415px;
+  object-fit: cover;
+  object-position: center;
 }
 
-.hotel-mason > div > img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.hotel-card {
+  height: 330px;
 }
-.horizontal {
-  grid-column: span 2;
+
+div > h5 {
+  font-size: 18px;
+  line-height: 1.25em;
+  text-wrap: pretty;
+  font-weight: normal;
 }
-.vertical {
-  grid-row: span 2;
-}
-.big {
-  grid-column: span 2;
-  grid-row: span 2;
+
+h5 a {
+  text-decoration: underline;
 }
 
 @media screen and (max-width: 768px) {

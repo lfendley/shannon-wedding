@@ -171,6 +171,7 @@
 
   <!-- Accomodation Start -->
   <div class="container-fluid py-5" id="accommodation">
+    <img src="img/hotel/5.jpeg" />
         <div class="container py-5 text-white">
             <div class="section-title position-relative text-center">
             <h6
